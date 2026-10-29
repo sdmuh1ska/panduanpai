@@ -69,6 +69,8 @@ ol.steps li>div{padding-top:4px}
 b.k{background:var(--s);color:var(--rc);padding:1px 7px;border-radius:6px;font-weight:700;white-space:nowrap}
 figure{margin:0}
 figure img{display:block;width:100%;height:auto;border-radius:12px;border:3px solid var(--rc);background:var(--card)}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:620px){.phones{grid-template-columns:1fr;max-width:300px;justify-self:center}}
 figure.phone{max-width:300px;justify-self:center}
 figcaption{font-size:14px;color:var(--muted);margin-top:6px;text-align:center}
 .key{background:var(--key-bg);color:var(--key-fg);border:2px dashed var(--key-line);border-radius:14px;padding:12px 16px}
@@ -115,7 +117,8 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;text-align:center}
 
 <!-- MULAI -->
 <section id="mulai" class="A">
-  <div class="band"><h2>Cara Membuka dan Memasang Aplikasi</h2><p>Lakukan sekali di awal, lalu aplikasi tampil di beranda HP bersama aplikasi lain.</p></div>
+  <div class="band"><h2>Cara Membuka dan Memasang Aplikasi</h2><p>Lakukan sekali di awal, lalu aplikasi tampil di beranda HP bersama aplikasi lain. Ikuti langkah Android atau iPhone.</p></div>
+  <h3>Pemasangan di HP Android</h3>
   <div class="card split">
     <ol class="steps">
       <li><div>Buka peramban (misalnya Chrome) di HP atau laptop.</div></li>
@@ -128,6 +131,22 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;text-align:center}
   </div>
   <div class="key" style="margin-top:14px"><strong>Poin Penting</strong>
     <p>Pemasangan cukup sekali. Setelah terpasang, Anda tidak perlu mengetik alamat lagi. Kotak <b>Pasang</b> muncul di HP Android.</p></div>
+  <h3>Pemasangan di iPhone (iOS)</h3>
+  <div class="card">
+    <ol class="steps">
+      <li><div>Buka alamat <b class="k">https://sdmuh1ska.github.io/pai/</b> di <b>Safari</b>. Halaman login muncul.</div></li>
+      <li><div>Tekan tombol <b class="k">Share</b> (kotak dengan panah ke atas) di <b>tengah bagian bawah</b> layar.</div></li>
+      <li><div>Pada menu yang muncul, pilih <b class="k">Tambah ke Layar Utama</b>.</div></li>
+      <li><div>Tulis nama aplikasi, atau langsung tekan <b class="k">Tambah</b> di kanan atas.</div></li>
+      <li><div>Ikon aplikasi muncul di Layar Utama. Buka aplikasi dari ikon itu.</div></li>
+    </ol>
+    <div class="phones">
+      <figure><img src="img/ios1-tombol-share.jpg" alt="Safari dengan tombol Share di tengah bawah"><figcaption>Langkah 2: tombol Share</figcaption></figure>
+      <figure><img src="img/ios2-menu-layar-utama.jpg" alt="Menu Share dengan pilihan Tambah ke Layar Utama"><figcaption>Langkah 3: Tambah ke Layar Utama</figcaption></figure>
+      <figure><img src="img/ios3-tambah.jpg" alt="Layar Tambah ke Layar Utama dengan nama Al Islam"><figcaption>Langkah 4: tekan Tambah</figcaption></figure>
+    </div>
+    <div class="key"><strong>Poin Penting</strong><p>Di iPhone, kotak Pasang tidak muncul sendiri. Pemasangan dilakukan lewat tombol Share di Safari, cukup sekali.</p></div>
+  </div>
 </section>
 
 <!-- MASUK -->
