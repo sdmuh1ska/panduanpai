@@ -1,0 +1,334 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Buku Panduan Monitoring Al Islam</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: sampul berwarna, empat bagian per peran (tiap peran punya warna sendiri), langkah bernomor di kartu, gambar layar berbingkai, kotak "Poin Penting" kuning */
+:root{
+  --bg:#f3f7f4; --card:#ffffff; --fg:#17301f; --muted:#51675a; --line:#d8e5dc;
+  --hero1:#0f6b3c; --hero2:#16a05a;
+  --c-all:#0f6b3c; --c-all-s:#e1f3e8;
+  --c-guru:#15803d; --c-guru-s:#dcf5e4;
+  --c-mapel:#1d62c9; --c-mapel-s:#e0ecfd;
+  --c-admin:#7b3fc4; --c-admin-s:#efe5fb;
+  --c-wali:#d9661a; --c-wali-s:#fdebdb;
+  --key-bg:#fff4c7; --key-fg:#5b4300; --key-line:#f0c53b;
+  --f-display:'Baloo 2',system-ui,sans-serif; --f-body:'Nunito Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1a14; --card:#17261d; --fg:#e8f3ec; --muted:#a2b8aa; --line:#2a4033;
+  --hero1:#0b4a2a; --hero2:#12864b;
+  --c-all:#5fd493; --c-all-s:#1b3a29; --c-guru:#5fd493; --c-guru-s:#1b3a29;
+  --c-mapel:#7fb0ff; --c-mapel-s:#1a2b48; --c-admin:#c4a0f5; --c-admin-s:#2d2142;
+  --c-wali:#ffa566; --c-wali-s:#442a17;
+  --key-bg:#3d3310; --key-fg:#ffe9a0; --key-line:#a98a1c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1a14; --card:#17261d; --fg:#e8f3ec; --muted:#a2b8aa; --line:#2a4033;
+  --hero1:#0b4a2a; --hero2:#12864b;
+  --c-all:#5fd493; --c-all-s:#1b3a29; --c-guru:#5fd493; --c-guru-s:#1b3a29;
+  --c-mapel:#7fb0ff; --c-mapel-s:#1a2b48; --c-admin:#c4a0f5; --c-admin-s:#2d2142;
+  --c-wali:#ffa566; --c-wali-s:#442a17;
+  --key-bg:#3d3310; --key-fg:#ffe9a0; --key-line:#a98a1c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body{overflow-x:hidden}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+a{color:inherit}
+.hero{margin:0 -9999px;padding:44px 9999px 40px;background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff}
+.hero .wrap{display:grid;gap:14px}
+.eyebrow{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;opacity:.9}
+.hero h1{font-size:clamp(32px,6vw,54px);font-weight:800}
+.hero p{margin:0;max-width:60ch;font-size:19px;opacity:.95}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:-26px}
+.role{background:var(--card);border-radius:16px;padding:18px;text-decoration:none;border:2px solid var(--line);border-top:8px solid var(--rc);display:grid;gap:6px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.role b{font-family:var(--f-display);font-size:21px;color:var(--rc)}
+.role span{font-size:15px;color:var(--muted)}
+.role:hover{transform:translateY(-2px)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.nav a{font-weight:700;font-size:14px;text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--s);color:var(--rc);border:1.5px solid var(--rc)}
+section{margin-top:40px;scroll-margin-top:70px}
+.band{background:var(--rc);color:#fff;border-radius:18px;padding:20px 24px;display:grid;gap:4px}
+.band h2{font-size:clamp(26px,4.5vw,36px)}
+.band p{margin:0;opacity:.95}
+.dark-on .band{color:#10201a}
+h3{font-size:24px;color:var(--rc);margin:34px 0 12px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:16px;margin-top:16px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.split>*{min-width:0}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--rc);color:#fff;font:800 18px var(--f-display);display:grid;place-items:center}
+:root[data-theme="dark"] ol.steps li::before{color:#10201a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) ol.steps li::before{color:#10201a}}
+ol.steps li>div{padding-top:4px}
+b.k{background:var(--s);color:var(--rc);padding:1px 7px;border-radius:6px;font-weight:700;white-space:nowrap}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:3px solid var(--rc);background:var(--card)}
+figure.phone{max-width:300px;justify-self:center}
+figcaption{font-size:14px;color:var(--muted);margin-top:6px;text-align:center}
+.key{background:var(--key-bg);color:var(--key-fg);border:2px dashed var(--key-line);border-radius:14px;padding:12px 16px}
+.key strong{display:block;font-family:var(--f-display);font-size:17px;letter-spacing:.03em;text-transform:uppercase}
+.key p{margin:2px 0 0}
+.menus{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.menu{border-radius:14px;padding:14px;background:var(--m-s);border-left:8px solid var(--m)}
+.menu b{display:block;font-family:var(--f-display);font-size:18px;color:var(--m)}
+.menu span{font-size:15px}
+.m1{--m:#1f7a45;--m-s:var(--c-guru-s)}.m2{--m:#1d62c9;--m-s:var(--c-mapel-s)}.m3{--m:#7b3fc4;--m-s:var(--c-admin-s)}
+.m4{--m:#d9661a;--m-s:var(--c-wali-s)}.m5{--m:#b3811a;--m-s:var(--key-bg)}.m6{--m:#0e8a8a;--m-s:#d9f2f2}
+:root[data-theme="dark"] .m6{--m:#6fd6d6;--m-s:#173a3a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .m6{--m:#6fd6d6;--m-s:#173a3a}
+ :root:not([data-theme="light"]) .m1{--m:#5fd493}:root:not([data-theme="light"]) .m2{--m:#7fb0ff}:root:not([data-theme="light"]) .m3{--m:#c4a0f5}:root:not([data-theme="light"]) .m4{--m:#ffa566}:root:not([data-theme="light"]) .m5{--m:#ffd75e}}
+.sheet{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;background:var(--card)}
+th{background:var(--rc);color:#fff;text-align:left;padding:10px 12px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.pill{display:inline-block;background:var(--s);color:var(--rc);font-weight:700;padding:0 10px;border-radius:99px;font-size:14px}
+footer{margin-top:48px;color:var(--muted);font-size:14px;text-align:center}
+.A{--rc:var(--c-all);--s:var(--c-all-s)}.G{--rc:var(--c-guru);--s:var(--c-guru-s)}
+.M{--rc:var(--c-mapel);--s:var(--c-mapel-s)}.D{--rc:var(--c-admin);--s:var(--c-admin-s)}.W{--rc:var(--c-wali);--s:var(--c-wali-s)}
+:root[data-theme="dark"] .band{color:#10201a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .band{color:#10201a}}
+</style>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">SD Muhammadiyah 1 Surakarta</div>
+  <h1>Buku Panduan Monitoring Al Islam</h1>
+  <p>Cara memakai aplikasi untuk mencatat sholat, Al-Qur'an, Al-Husna, hafalan surah, hafalan doa, dan INFAQ. Ikuti langkah bernomor sesuai peran Anda.</p>
+</div></header>
+
+<main class="wrap">
+<div class="roles">
+  <a class="role D" href="#admin"><b>Admin</b><span>Semua kelas dan pengelolaan akun</span></a>
+  <a class="role G" href="#guru-kelas"><b>Guru Kelas</b><span>Catat siswa, INFAQ, riwayat, rekap</span></a>
+  <a class="role M" href="#guru-mapel"><b>Guru Mapel</b><span>Catat dan pantau beberapa kelas</span></a>
+  <a class="role W" href="#wali"><b>Wali Siswa</b><span>Catat kegiatan anak dan lihat riwayat</span></a>
+</div>
+
+<nav class="nav" aria-label="Daftar bagian">
+  <a class="A" href="#mulai">Pasang Aplikasi</a><a class="A" href="#masuk">Masuk</a><a class="G" href="#guru-kelas">Guru Kelas</a><a class="M" href="#guru-mapel">Guru Mapel</a><a class="D" href="#admin">Admin</a><a class="W" href="#wali">Wali Siswa</a>
+</nav>
+
+<!-- MULAI -->
+<section id="mulai" class="A">
+  <div class="band"><h2>Cara Membuka dan Memasang Aplikasi</h2><p>Lakukan sekali di awal, lalu aplikasi tampil di beranda HP bersama aplikasi lain.</p></div>
+  <div class="card split">
+    <ol class="steps">
+      <li><div>Buka peramban (misalnya Chrome) di HP atau laptop.</div></li>
+      <li><div>Kunjungi alamat <b class="k">https://sdmuh1ska.github.io/pai/</b></div></li>
+      <li><div>Halaman <b>Monitoring Al Islam</b> muncul seperti pada gambar.</div></li>
+      <li><div>Di <b>HP Android</b>, muncul kotak di bagian bawah: <i>Pasang Monitoring Al Islam di layar utama HP Anda</i>. Tekan tombol hijau <b class="k">Pasang</b>.</div></li>
+      <li><div>Ikon aplikasi muncul di beranda HP bersama aplikasi lain. Mulai sekarang, buka aplikasi dari ikon itu.</div></li>
+    </ol>
+    <figure class="phone"><img src="img/00-pasang-android.jpg" alt="Halaman login di HP Android dengan kotak Pasang aplikasi"><figcaption>Tampilan di HP Android. Kotak Pasang ada di bagian bawah.</figcaption></figure>
+  </div>
+  <div class="key" style="margin-top:14px"><strong>Poin Penting</strong>
+    <p>Pemasangan cukup sekali. Setelah terpasang, Anda tidak perlu mengetik alamat lagi. Kotak <b>Pasang</b> muncul di HP Android.</p></div>
+</section>
+
+<!-- MASUK -->
+<section id="masuk" class="A">
+  <div class="band"><h2>Masuk dan Keluar</h2><p>Semua pengguna memakai halaman yang sama.</p></div>
+  <div class="card split">
+    <ol class="steps">
+      <li><div>Buka aplikasi dari ikon di beranda HP, atau lewat alamat di bagian Cara Membuka dan Memasang Aplikasi.</div></li>
+      <li><div>Ketik <b class="k">ID Siswa / ID Guru</b>.</div></li>
+      <li><div>Ketik <b class="k">PIN</b>.</div></li>
+      <li><div>Tekan tombol hijau <b class="k">MASUK</b>.</div></li>
+      <li><div>Tunggu sampai dashboard tampil. Untuk keluar, tekan <b class="k">KELUAR</b> di kanan atas.</div></li>
+    </ol>
+    <figure><img src="img/01-login.jpg" alt="Halaman login"><figcaption>Halaman login</figcaption></figure>
+  </div>
+  <div class="key" style="margin-top:14px"><strong>Poin Penting</strong>
+    <p>Pesan <i>ID atau PIN salah</i> berarti ID atau PIN keliru, atau akun tidak aktif. Hubungi Admin jika lupa PIN. Selalu tekan KELUAR setelah selesai di perangkat bersama.</p></div>
+</section>
+
+<!-- GURU KELAS -->
+<section id="guru-kelas" class="G">
+  <div class="band"><h2>Panduan Guru Kelas</h2><p>Untuk Wali Kelas yang mengampu satu kelas.</p></div>
+
+  <h3>Mengenal dashboard</h3>
+  <div class="card split">
+    <ol class="steps">
+      <li><div><b>Bagian atas</b>: nama Anda, tanda <i>Wali Kelas • Kelas</i>, dan tombol <b class="k">KELUAR</b>.</div></li>
+      <li><div><b>Tiga kartu</b>: Siswa Aktif, Kelas, dan Akses.</div></li>
+      <li><div><b>Monitoring Aktivitas Siswa</b>: enam kartu menu untuk mencatat.</div></li>
+      <li><div><b>Daftar Siswa</b> di bawah, dengan tombol <b class="k">REKAP RIWAYAT KELAS</b>.</div></li>
+    </ol>
+    <figure><img src="img/02-dashboard-guru.jpg" alt="Dashboard Guru Kelas"><figcaption>Dashboard Guru Kelas</figcaption></figure>
+  </div>
+  <div class="menus" style="margin-top:16px">
+    <div class="menu m1"><b>Membaca Al-Qur'an</b><span>Catat bacaan Al-Qur'an siswa</span></div>
+    <div class="menu m2"><b>Membaca Al-Husna</b><span>Catat bacaan Al-Husna siswa</span></div>
+    <div class="menu m3"><b>Hafalan Surah</b><span>Catat setoran hafalan surah</span></div>
+    <div class="menu m4"><b>Hafalan Doa</b><span>Catat setoran hafalan doa</span></div>
+    <div class="menu m5"><b>Monitoring INFAQ</b><span>Catat infaq satu kelas sekaligus</span></div>
+    <div class="menu m6"><b>Riwayat INFAQ</b><span>Lihat catatan INFAQ kelas</span></div>
+  </div>
+
+  <h3>Mencatat kegiatan siswa</h3>
+  <div class="key"><strong>Poin Penting</strong><p>Semua formulir berpola sama: pilih siswa, periksa tanggal (terisi hari ini), isi data, tekan <b>Simpan</b>. Tekan <b>Batal</b> untuk menutup tanpa menyimpan. Sholat 5 waktu diisi dari akun siswa, guru melihatnya di riwayat.</p></div>
+
+  <div class="card"><h3 style="margin:0">Membaca Al-Qur'an</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Membaca Al-Qur'an</b>.</div></li>
+      <li><div>Pilih nama di <b class="k">Pilih Siswa</b>.</div></li>
+      <li><div>Periksa <b class="k">Tanggal</b>.</div></li>
+      <li><div>Pilih <b class="k">Nama Surah</b>.</div></li>
+      <li><div>Isi <b class="k">Ayat Mulai</b> dan <b class="k">Ayat Akhir</b>.</div></li>
+      <li><div>Tekan <b class="k">Simpan</b>.</div></li>
+    </ol>
+    <figure><img src="img/04-input-quran.jpg" alt="Formulir Al-Qur'an"><figcaption>Formulir Input Membaca Al-Qur'an</figcaption></figure></div>
+    <div class="key"><strong>Poin Penting</strong><p>Ayat akhir tidak boleh lebih kecil dari ayat mulai. Catatan guru tampil sebagai <i>Didampingi</i> di riwayat.</p></div></div>
+
+  <div class="card"><h3 style="margin:0">Membaca Al-Husna</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Membaca Al-Husna</b>.</div></li>
+      <li><div>Pilih siswa dan periksa tanggal.</div></li>
+      <li><div>Isi <b class="k">Halaman Mulai</b> dan <b class="k">Halaman Akhir</b>.</div></li>
+      <li><div>Tekan <b class="k">Simpan</b>.</div></li>
+    </ol>
+    <figure><img src="img/05-input-husna.jpg" alt="Formulir Al-Husna"><figcaption>Formulir Input Membaca Al-Husna</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">Hafalan Surah</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Hafalan Surah</b>.</div></li>
+      <li><div>Tunggu tulisan <i>Memuat data...</i> berganti pilihan.</div></li>
+      <li><div>Pilih siswa, periksa tanggal, pilih <b class="k">Nama Surah</b>.</div></li>
+      <li><div>Isi <b class="k">Ayat Mulai</b> dan <b class="k">Ayat Akhir</b>.</div></li>
+      <li><div>Pilih <b class="k">Status</b>: <span class="pill">Lancar</span> atau <span class="pill">Belum Lancar</span>.</div></li>
+      <li><div>Tekan <b class="k">Simpan</b>.</div></li>
+    </ol>
+    <figure><img src="img/06-input-hafalan-surah.jpg" alt="Formulir Hafalan Surah"><figcaption>Formulir Input Hafalan Surah</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">Hafalan Doa</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Hafalan Doa</b>.</div></li>
+      <li><div>Pilih siswa dan periksa tanggal.</div></li>
+      <li><div>Pilih <b class="k">Nama Doa</b>.</div></li>
+      <li><div>Pilih <b class="k">Status</b>: Lancar atau Belum Lancar.</div></li>
+      <li><div>Tekan <b class="k">Simpan</b>.</div></li>
+    </ol>
+    <figure><img src="img/07-input-hafalan-doa.jpg" alt="Formulir Hafalan Doa"><figcaption>Formulir Input Hafalan Doa</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">INFAQ satu kelas</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Monitoring INFAQ</b>.</div></li>
+      <li><div>Tanggal dan kelas terisi otomatis.</div></li>
+      <li><div>Pilih <b class="k">Ya</b> untuk siswa yang berinfaq. Gulir untuk melihat semua nama.</div></li>
+      <li><div>Tekan <b class="k">Simpan</b>. Pesan hijau menyebut jumlah siswa yang tersimpan.</div></li>
+    </ol>
+    <figure><img src="img/08-monitoring-infaq.jpg" alt="Formulir Monitoring INFAQ"><figcaption>Formulir Monitoring INFAQ</figcaption></figure></div>
+    <div class="key"><strong>Poin Penting</strong><p>Menu INFAQ khusus Wali Kelas. Hanya siswa yang dipilih <b>Ya</b> yang disimpan. Jika belum ada yang dipilih, muncul peringatan.</p></div></div>
+
+  <h3>Melihat siswa, riwayat, dan rekap</h3>
+  <div class="card"><h3 style="margin:0">Mencari siswa</h3><div class="split">
+    <ol class="steps">
+      <li><div>Gulir ke <b class="k">Daftar Siswa</b>.</div></li>
+      <li><div>Ketik nama atau ID di kolom <b class="k">Cari</b>.</div></li>
+      <li><div>Kartu siswa menampilkan nama, ID, kelas, dan tombol <b class="k">Riwayat</b>.</div></li>
+    </ol>
+    <figure><img src="img/03-daftar-siswa.jpg" alt="Daftar Siswa"><figcaption>Daftar Siswa</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">Riwayat satu siswa</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan <b class="k">Riwayat</b> pada kartu siswa.</div></li>
+      <li><div>Atur <b class="k">Tanggal Mulai</b> dan <b class="k">Tanggal Akhir</b>, lalu <b class="k">TAMPILKAN</b>. Atau pilih tombol cepat: Hari Ini, 7, 14, atau 30 Hari Terakhir.</div></li>
+      <li><div>Tekan kartu ringkasan (Total, Sholat, Al-Qur'an, dan lainnya) untuk menyaring tabel.</div></li>
+      <li><div>Tekan <b class="k">← Kembali</b> untuk keluar dari halaman.</div></li>
+    </ol>
+    <figure><img src="img/11-riwayat-siswa.jpg" alt="Riwayat Siswa"><figcaption>Riwayat Siswa</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">Rekap seluruh kelas</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan tombol hijau <b class="k">REKAP RIWAYAT KELAS</b>.</div></li>
+      <li><div>Atur tanggal lalu <b class="k">TAMPILKAN</b>.</div></li>
+      <li><div>Tabel memuat aktivitas semua siswa dengan kolom <b>Nama Siswa</b>.</div></li>
+    </ol>
+    <figure><img src="img/10-rekap-kelas.jpg" alt="Rekap Aktivitas Kelas"><figcaption>Rekap Aktivitas Kelas</figcaption></figure></div></div>
+
+  <div class="card"><h3 style="margin:0">Riwayat INFAQ</h3><div class="split">
+    <ol class="steps">
+      <li><div>Tekan kartu <b class="k">Riwayat INFAQ</b>.</div></li>
+      <li><div>Daftar menampilkan tanggal, ID, dan nama siswa yang berinfaq.</div></li>
+      <li><div>Tekan <b class="k">Tutup</b> untuk menutup jendela.</div></li>
+    </ol>
+    <figure><img src="img/09-riwayat-infaq.jpg" alt="Riwayat INFAQ"><figcaption>Belum ada data: tampil pesan kosong</figcaption></figure></div></div>
+</section>
+
+<!-- GURU MAPEL -->
+<section id="guru-mapel" class="M">
+  <div class="band"><h2>Panduan Guru Mapel</h2><p>Tampilan sama dengan Guru Kelas, tetapi untuk beberapa kelas.</p></div>
+  <div class="card"><ol class="steps">
+    <li><div>Masuk dengan <b class="k">ID Guru</b> dan <b class="k">PIN</b>.</div></li>
+    <li><div>Pada kartu <b class="k">Akses</b>, periksa kelas yang Anda ampu.</div></li>
+    <li><div>Di Daftar Siswa, pilih <b class="k">Semua Kelas</b> atau satu kelas.</div></li>
+    <li><div>Cari siswa lewat kolom pencarian.</div></li>
+    <li><div>Catat lewat kartu Al-Qur'an, Al-Husna, Hafalan Surah, atau Hafalan Doa. Langkahnya sama dengan Guru Kelas.</div></li>
+    <li><div>Lihat <b class="k">Riwayat</b> siswa atau <b class="k">REKAP RIWAYAT KELAS</b>, lalu saring dengan pilihan kelas.</div></li>
+  </ol>
+  <div class="key"><strong>Poin Penting</strong><p>Menu INFAQ khusus Wali Kelas. Jika muncul pesan <i>Guru Mapel belum memiliki kelas</i>, minta Admin menambahkan kelas Anda di lembar GURU_KELAS.</p></div></div>
+</section>
+
+<!-- ADMIN -->
+<section id="admin" class="D">
+  <div class="band"><h2>Panduan Admin</h2><p>Memantau semua kelas dan mengelola akun lewat Google Spreadsheet.</p></div>
+  <div class="card"><h3 style="margin:0">Memantau di aplikasi</h3><ol class="steps">
+    <li><div>Masuk dengan akun berlevel <b class="k">ADMIN</b>. Kartu Akses menampilkan <b>SEMUA</b>.</div></li>
+    <li><div>Pilih <b class="k">Semua Kelas</b> atau satu kelas di Daftar Siswa.</div></li>
+    <li><div>Tekan <b class="k">Riwayat</b> pada siswa, atau <b class="k">REKAP RIWAYAT KELAS</b> untuk semua kelas.</div></li>
+    <li><div>Catat kegiatan siswa mana pun lewat kartu Al-Qur'an, Al-Husna, Hafalan Surah, atau Hafalan Doa.</div></li>
+  </ol></div>
+  <div class="card"><h3 style="margin:0">Mengelola data di Spreadsheet</h3>
+    <div class="sheet"><table>
+      <thead><tr><th>Tugas</th><th>Lembar</th><th>Yang diisi</th></tr></thead>
+      <tbody>
+        <tr><td>Tambah siswa</td><td>SISWA</td><td>ID_Siswa, Nama, Kelas, PIN, Status = <b>Aktif</b></td></tr>
+        <tr><td>Tambah guru</td><td>GURU</td><td>ID_Guru, Nama, PIN, Status = Aktif, Level, Kelas (Guru Kelas)</td></tr>
+        <tr><td>Atur kelas Guru Mapel</td><td>GURU_KELAS</td><td>Satu baris per kelas: ID_Guru dan Kelas</td></tr>
+        <tr><td>Ubah daftar surah / doa</td><td>MASTER_SURAH / MASTER_DOA</td><td>Nama di kolom B, satu per baris, mulai baris 2</td></tr>
+        <tr><td>Nonaktifkan akun</td><td>SISWA atau GURU</td><td>Ubah Status dari Aktif ke Nonaktif</td></tr>
+      </tbody></table></div>
+    <div class="key"><strong>Poin Penting</strong><p>Kolom <b>Level</b>: tulis <b>ADMIN</b> untuk Admin, <b>GURU_MAPEL</b> untuk Guru Mapel, kosongkan untuk Guru Kelas. Akun yang tidak berstatus Aktif tidak bisa masuk. Menu INFAQ tidak dipakai Admin.</p></div></div>
+</section>
+
+<!-- WALI -->
+<section id="wali" class="W">
+  <div class="band"><h2>Panduan Wali Siswa</h2><p>Mencatat kegiatan anak di rumah dan melihat riwayatnya.</p></div>
+  <div class="card"><h3 style="margin:0">Masuk</h3><ol class="steps">
+    <li><div>Ketik <b class="k">ID Siswa</b> dan <b class="k">PIN</b> anak, lalu tekan <b class="k">MASUK</b>.</div></li>
+    <li><div>Dashboard menampilkan nama, kelas, dan enam kartu menu.</div></li>
+  </ol></div>
+  <div class="card"><h3 style="margin:0">Sholat 5 Waktu</h3><ol class="steps">
+    <li><div>Tekan kartu <b class="k">Sholat 5 Waktu</b> dan periksa tanggal.</div></li>
+    <li><div>Centang sholat yang sudah dikerjakan: Subuh, Zuhur, Asar, Magrib, Isya.</div></li>
+    <li><div>Pilih cara <span class="pill">Jamaah</span> atau <span class="pill">Sendiri</span>, lalu jam dan menit.</div></li>
+    <li><div>Tekan <b class="k">SIMPAN CATATAN</b>.</div></li>
+  </ol>
+  <div class="key"><strong>Poin Penting</strong><p>Sholat yang sudah dicatat pada tanggal yang sama ditolak. Sholat lain yang belum tercatat tetap tersimpan.</p></div></div>
+  <div class="card"><h3 style="margin:0">Al-Qur'an dan Al-Husna</h3><ol class="steps">
+    <li><div>Tekan kartu <b class="k">Al-Qur'an</b> atau <b class="k">Al-Husna</b>.</div></li>
+    <li><div>Al-Qur'an: pilih surah, isi ayat mulai dan akhir. Al-Husna: isi halaman mulai dan akhir.</div></li>
+    <li><div>Pilih <b class="k">Pendampingan</b>: Sendiri atau Didampingi, lalu simpan.</div></li>
+  </ol></div>
+  <div class="card"><h3 style="margin:0">Hafalan Surah dan Hafalan Doa</h3><ol class="steps">
+    <li><div>Tekan kartu <b class="k">Hafalan Surah</b> atau <b class="k">Hafalan Doa</b>.</div></li>
+    <li><div>Pilih surah dan isi ayat, atau pilih doa.</div></li>
+    <li><div>Pilih <b class="k">Status</b>: Lancar atau Belum Lancar, lalu simpan.</div></li>
+  </ol></div>
+  <div class="card"><h3 style="margin:0">Riwayat</h3><ol class="steps">
+    <li><div>Tekan kartu <b class="k">Riwayat Monitoring Siswa</b>.</div></li>
+    <li><div>Atur rentang tanggal, lalu tampilkan.</div></li>
+    <li><div>Tekan kartu ringkasan untuk menyaring tabel. Tampilannya sama dengan Riwayat Siswa di Panduan Guru Kelas.</div></li>
+  </ol>
+  <div class="key"><strong>Poin Penting</strong><p>Catatan yang sama pada tanggal dan jenis yang sama tidak bisa disimpan dua kali.</p></div></div>
+</section>
+
+<footer>Buku Panduan Monitoring Al Islam • SD Muhammadiyah 1 Surakarta</footer>
+</main>
+
+</body></html>
